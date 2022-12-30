@@ -20,25 +20,31 @@ var series_dist = {
 hexo.on('generateBefore', () => {
     const posts = hexo.locals.get('posts')
     // hexo.log.info(`${__post.title} ${__post.subtitle} ${__post['series-name']} ${__post['series-index']}`)
-    var series_dist = new Object
-    var series_dist_item
+    const series_dist = {}
     // 构建
-    posts.each((__post, index)  => {
-        if (__post['series-index'] == 0){
-            var __series = new Object()
-            __series.home = __post
-            __series.pages = new Array()
-            series_dist[__post['series-name']] = __series;
+    posts.each((it) => {
+        if (it['series-index'] === 0){
+            series_dist[it['series-name']] = {
+                home: it,
+                pages: []
+            }
         }
     })
-    posts.each((__post, index) => {
-        if (__post['series-index'] != 0 && !isNaN(__post['series-index'])) {
-            series_dist[__post['series-name']].pages.push(__post)
+    posts.each((it) => {
+        if (it['series-index'] !== 0 && !isNaN(it['series-index'])) {
+            series_dist[it['series-name']].pages.push(it)
         }
     })
-    for (series_dist_item in series_dist) {
-        series_dist[series_dist_item].pages.sort((a,b)=> a['series-index']-b['series-index'])
-        // console.log(series_dist[series_dist_item].pages)
+    for (const item of Object.values(series_dist)) {
+        item.pages.sort((a, b) => {
+            const cmp = a['series-index'] - b['series-index']
+            if (cmp === 0) {
+                hexo.log.error('Todo: error message!')
+                process.exit(-1)
+            }
+            return cmp
+        })
+        // console.log(item.pages)
     }
     // console.log(series_dist)
 })
