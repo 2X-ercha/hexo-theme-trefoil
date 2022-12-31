@@ -1,0 +1,5 @@
+body
+  // helper __series_toc debug
+  each post, index in page.posts.data
+    span=post.title + ' ' + post.subtitle
+    !=__series_toc(post)
