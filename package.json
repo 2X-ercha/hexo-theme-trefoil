@@ -20,6 +20,5 @@
   "dependencies": {
     "hexo-renderer-pug": "^3.0.0",
     "hexo-renderer-stylus": "^2.1.0"
-  },
-  "homepage": "https://xaoxuu.com/wiki/stellar/"
+  }
 }

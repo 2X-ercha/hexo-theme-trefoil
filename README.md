@@ -294,3 +294,55 @@ subtitle: 实验一 环境配置
 
 
 
+## 一些好用的js
+
+### img lazyload
+
+https://www.npmjs.com/package/vanilla-lazyload
+
+### scrollreveal
+
+[jlmakes/scrollreveal：在元素滚动到视图中时对其进行动画处理。 (github.com)](https://github.com/jlmakes/scrollreveal)
+
+https://scrollrevealjs.org/api/reveal.html
+
+### swiper
+
+[Swiper中文网-轮播图幻灯片js插件,H5页面前端开发](https://swiper.com.cn/)
+
+### 【!】赫蹏 (Heti) 
+
+[赫蹏 - 一个简约又简单的网页中文排版增强 (sivan.github.io)](https://sivan.github.io/heti/)
+
+### MathJax and katex
+
+[mathjax/MathJax: Beautiful and accessible math in all browsers (github.com)](https://github.com/mathjax/MathJax)
+
+[KaTeX/KaTeX: Fast math typesetting for the web. (github.com)](https://github.com/KaTeX/KaTeX)
+
+### 相对时间
+
+[Lately.js - 800bytes minimalist 'timeago' plugin. (tokinx.github.io)](https://tokinx.github.io/lately/index-zh.html)
+
+### 图片灯箱
+
+[ViewImage.js - 2kb minimalist lightbox. (tokinx.github.io)](https://tokinx.github.io/ViewImage/)
+
+### 图片瀑布流
+
+[Waterfall.js - Pinterest Grid in Just 1KB (raphamorim.io)](https://raphamorim.io/waterfall.js/)
+
+
+
+
+##　一些 hexo 主题编写参考
+
+[生成器generator使用参考](https://www.jianshu.com/p/26b5a0b59cdd)
+
+生成指定路由的页面，可以指定模版
+
+[过滤器filter使用参考](https://www.jianshu.com/p/53d3bfa9ad05)
+
+1. 插入替换（常用栗子比如图片懒加载）
+
+2. 选择性生成css或js
