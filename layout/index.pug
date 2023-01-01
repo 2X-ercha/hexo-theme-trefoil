@@ -1,5 +1,7 @@
-body
-  // helper __series_toc debug
+extends includes/layout.pug
+
+block content
+  //- helper __series_toc debug
   each post, index in page.posts.data
     span=post.title + ' ' + post.subtitle
     !=__series_toc(post)

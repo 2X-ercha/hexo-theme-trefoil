@@ -1,0 +1,6 @@
+# 是否启用黑夜模式
+default_display_mode: light # light or dark
+
+lightmode_style:
+
+darkmode_style:

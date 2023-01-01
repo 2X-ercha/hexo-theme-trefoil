@@ -1,0 +1,34 @@
+- var pageType = is_post() ? 'post' : 'page'
+
+doctype html
+html(lang=config.language data-theme=theme.default_display_mode)
+  head
+    // TODO include ./head.pug
+  body
+    #sidebar
+    // TODO: !=partial('includes/sidebar', {}, {cache: true})
+    if page.type !== '404'
+      #body-wrap(class=pageType)
+        header#header
+        main#content-inner.layout
+          // TODO:
+            一般而言<aside>应该在block中被定义（避免无内容的空标签）
+            然而考虑到一些样式表的占位情况
+            故之后视情况讨论
+          aside#leftbody
+            block leftbody
+          #mainbody
+            if body
+              div != body
+            else
+              block content
+          aside#rightbody
+            block rightbody
+        footer#footer
+    else
+      include ./404.pug
+    #rightside
+    // TODO: include './rightside.pug'
+    // TODO: !=partial('includes/third-party/search/index', {}, {cache: true})
+    #script
+    // TODO: include ./additional-js.pug
