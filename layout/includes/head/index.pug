@@ -1,0 +1,34 @@
+- var pageTitle
+// TODO: is_archive() ? page.title = findArchivesTitle(page, theme.menu, date) : ''
+// TODO: languages file
+- if (is_tag()) pageTitle = _p('page.tag') + ': ' + page.tag
+- else if (is_category()) pageTitle = _p('page.category') + ': ' + page.category
+- else if (is_current('/404.html', [strict])) pageTitle = _p('error404')
+- else if (page.subtitle) pageTitle = page.title + ': ' + page.subtitle || config.title || ''
+- else pageTitle = page.title || config.title || ''
+- var isSubtitle = config.subtitle ? ' - ' + config.subtitle : ''
+- var tabTitle = is_home() || !pageTitle ? config.title + isSubtitle : pageTitle + ' | ' + config.title
+- var pageAuthor = config.email ? config.author + ',' + config.email : config.author
+- var pageCopyright = config.copyright || config.author
+
+meta(charset='UTF-8')
+meta(http-equiv="X-UA-Compatible" content="IE=edge")
+meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+title= tabTitle
+meta(name="author" content=pageAuthor)
+meta(name="copyright" content=pageCopyright)
+meta(name="format-detection" content="telephone=no")
+
+!=favicon_tag(theme.favicon || config.favicon)
+//- link(rel="canonical" href=urlNoIndex())
+
+// TODO: css Only necessary css files are selected. It is recommended to write files separately and use 'include' to import
+// TODO: global config
+//-
+  !=partial('includes/head/config', {}, {cache: true})
+  include ./head/config_site.pug
+  include ./head/noscript.pug
+// TODO: theme.inject
+//-
+  (??)!=fragment_cache('injectHeadJs', function(){return inject_head_js()})
+  !=fragment_cache('injectHead', function(){return injectHtml(theme.inject.head)})
