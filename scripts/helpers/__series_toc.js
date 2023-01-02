@@ -5,7 +5,9 @@ const { trim } = require('./utils');
 hexo.extend.helper.register('__series_toc', function (page) {
   const series_dist = hexo.locals.get('series_dist')
   const toc_str = []
-  if (typeof(page.series_name) === 'string' && page.series_index !== 0 && !isNaN(page.series_index)) {
+  if (typeof(page.series_name) === 'string' && page.series_name.length !== 0 && !isNaN(page.series_index)) {
+    // index === 0: series home toc
+    // index !== 0: series page toc, include self toc
     const series = series_dist[page.series_name]
     toc_str.push('<div class="doc-toc-tree">')
     for (const it of Object.values(series.pages)) {
