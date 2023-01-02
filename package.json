@@ -18,6 +18,8 @@
   "author": "[@noionion](https://github.com/2X-ercha/)",
   "license": "MIT",
   "dependencies": {
+    "hexo-front-matter": "^4.0.0",
+    "hexo-fs": "^4.1.1",
     "hexo-renderer-pug": "^3.0.0",
     "hexo-renderer-stylus": "^2.1.0"
   }
