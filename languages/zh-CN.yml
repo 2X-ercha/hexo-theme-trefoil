@@ -1,0 +1,11 @@
+page:
+  articles: 文章总览
+  tag: 标签
+  category: 分类
+  archives: 归档
+
+footer:
+  framework: 框架
+  theme: 主题
+
+error404: 页面没有找到
