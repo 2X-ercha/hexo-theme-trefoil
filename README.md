@@ -333,6 +333,10 @@ https://scrollrevealjs.org/api/reveal.html
 [Waterfall.js - Pinterest Grid in Just 1KB (raphamorim.io)](https://raphamorim.io/waterfall.js/)
 
 
+## 额外功能
+
+* 51la 统计
+* comment 评论
 
 
 ##　一些 hexo 主题编写参考
