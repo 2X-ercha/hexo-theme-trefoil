@@ -339,7 +339,7 @@ https://scrollrevealjs.org/api/reveal.html
 * comment 评论
 
 
-##　一些 hexo 主题编写参考
+## 一些 hexo 主题编写参考
 
 [生成器generator使用参考](https://www.jianshu.com/p/26b5a0b59cdd)
 
