@@ -1,0 +1,28 @@
+-
+  let algolia = 'undefined'
+  // TODO: algolia search config
+  let localSearch = 'undefined'
+  // TODO: local search config
+  let copyright = 'undefined'
+  // TODO: copyright config
+  // ...
+
+script.
+  const GLOBAL_CONFIG = {
+    root: '!{config.root}',
+    algolia: !{algolia},
+    localSearch: !{localSearch},
+    copy: {
+      success: '!{_p("copy.success")}',
+      error: '!{_p("copy.error")}',
+      noSupport: '!{_p("copy.noSupport")}'
+    },
+    copyright: !{copyright},
+    date_suffix: {
+      just: '!{_p("date_suffix.just")}',
+      min: '!{_p("date_suffix.min")}',
+      hour: '!{_p("date_suffix.hour")}',
+      day: '!{_p("date_suffix.day")}',
+      month: '!{_p("date_suffix.month")}'
+    }
+  }

@@ -8,4 +8,16 @@ footer:
   framework: 框架
   theme: 主题
 
+date_suffix:
+  just: 刚刚
+  min: 分钟前
+  hour: 小时前
+  day: 天前
+  month: 个月前
+
+copy:
+  success: 复制成功
+  error: 复制错误
+  noSupport: 浏览器不支持
+
 error404: 页面没有找到

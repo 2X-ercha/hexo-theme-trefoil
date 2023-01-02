@@ -1,0 +1,10 @@
+-
+  const titleVal = pageTitle.replace(/'/ig,"\\'")
+
+script#config-diff.
+  var GLOBAL_CONFIG_SITE = {
+    title: '!{titleVal}',
+    isPost: !{is_post()},
+    isHome: !{is_home()},
+    postUpdate: '!{full_date(page.updated)}'
+  }

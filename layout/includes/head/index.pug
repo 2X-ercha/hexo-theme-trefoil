@@ -13,21 +13,20 @@
 meta(charset='UTF-8')
 meta(http-equiv="X-UA-Compatible" content="IE=edge")
 meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
-title= tabTitle
+//- canonical的用途主要用于规范网页网址，对于网站优化而言可以有效的将权重集中至规范的网页网址上，避免搜索引擎收录相同内容不同网址的网页，出现位置最好出现在 <title></title> 标签前
+link(rel="canonical" href=urlNoIndex())
+title=tabTitle
 meta(name="author" content=pageAuthor)
 meta(name="copyright" content=pageCopyright)
 meta(name="format-detection" content="telephone=no")
 
 !=favicon_tag(theme.favicon || config.favicon)
-//- link(rel="canonical" href=urlNoIndex())
 
 // TODO: css Only necessary css files are selected. It is recommended to write files separately and use 'include' to import
-// TODO: global config
-//-
-  !=partial('includes/head/config', {}, {cache: true})
-  include ./head/config_site.pug
-  include ./head/noscript.pug
-// TODO: theme.inject
-//-
-  (??)!=fragment_cache('injectHeadJs', function(){return inject_head_js()})
-  !=fragment_cache('injectHead', function(){return injectHtml(theme.inject.head)})
+
+!=partial('includes/head/config_cache', {}, {cache: true})
+include ./config_site.pug
+// TODO: include ./head/noscript.pug
+
+!=fragment_cache('injectHead', function(){return injectHtml(theme.inject.head)})
+// TODO: (??)!=fragment_cache('injectHeadJs', function(){return inject_head_js()})
