@@ -1,6 +1,15 @@
 # menu
 menu:
 
+# abbrlink 永久链接
+## 使用此功能请卸载 hexo-abbrlink 和 hexo-abbrlink2 等类似重复功能插件，它们与该主题的主副标题特性并不兼容
+## 如果文章路径和文件名使用全英文，不建议开启此功能，建议在 hexo 的_config.yml 文件中使用 permalink: :title.html
+## 否则建议开启此功能，则在 hexo 的_config.yml 文件中如下配置
+##    permalink: :abbrlink.html or permalink: :abbrlink/
+## or permalink: posts/:abbrlink.html or permalink: posts/:abbrlink/
+abbrlink:
+  enable: true
+
 favicon:
 
 # 是否启用黑夜模式

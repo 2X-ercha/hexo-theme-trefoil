@@ -18,7 +18,7 @@ function hash(...args) {
 hexo.extend.filter.register('before_post_render', function (data) {
   if (data.abbrlink || data.layout !== 'post') return
 
-  const config = this.config.abbrlink || {};
+  const config = this.theme.config.abbrlink || this.config.abbrlink || {};
   if (!config.enable) return
 
   const mirror = front.parse(data.raw);
@@ -29,5 +29,5 @@ hexo.extend.filter.register('before_post_render', function (data) {
 
   fs.writeFileSync(data.full_source, '---\n' + front.stringify(mirror), 'utf-8')
 
-  hexo.log.info('TODO: Log message');
+  hexo.log.info(`Generate link [${abbrlink}] for post [${data.source}][${data.title+(data.subtitle?(': '+data.subtitle):'')}]`);
 }, 15);
