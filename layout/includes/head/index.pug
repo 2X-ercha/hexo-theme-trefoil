@@ -38,6 +38,9 @@ if is_category() && theme.category_css
 if is_archive() && theme.archive_css
   !=css(url_for(theme.archive_css))
 
+//- font
+!=css(url_for(theme.global_font_family_cdn))
+
 !=partial('includes/head/config_cache', {}, {cache: true})
 include ./config_site.pug
 // TODO: include ./head/noscript.pug

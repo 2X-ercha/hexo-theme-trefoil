@@ -1,0 +1,43 @@
+if hexo-config('css_prefix')
+  @import 'nib'
+// 配置变量从 ./var.styl 获取
+@import 'var'
+
+// TODO: ./css/_global/main.styl 所有css共用
+:root
+  --global-font-family : $font-family
+body
+  font-family: var(--global-font-family)
+// TODO: ./css/_glabal/article.styl 所有包含article（post and page）
+
+// _layout 全局通用
+// TODO: ./css/_layout/sidebar.styl 手机侧边导航栏
+
+// TODO: ./css/_layout/header.styl 顶栏布局
+
+// TODO: ./css/_layout/mainbody.styl 全局主体（左右栏和中间）
+.layout
+  display: flex
+  justify-content: center
+  align-items: center
+  #mainbody
+    max-width: 768px
+    width: 80%
+    // height: 100%
+    margin: 48px 0 72px 0
+    padding: 48px
+    border-radius: 2px
+    box-shadow: 0 8px 32px hsl(0deg 0% 0% / 32%)
+    background-color: hsl(0deg, 0%, 100%)
+  aside
+    width: calc((100% - 768px)/2)
+    margin: 48px 20px 72px 20px
+    border-radius: 2px
+    box-shadow: 0 8px 32px hsl(0deg 0% 0% / 32%)
+  #leftbody
+    right: 0
+  #rightbody
+    left: 0
+// TODO: ./css/_layout/footer.styl 页脚布局
+
+// _component ui组件库，与 trefoil/layout/component/*.pug 一一对应

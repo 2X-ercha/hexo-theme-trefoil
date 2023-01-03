@@ -23,10 +23,18 @@ default_display_mode: light # light or dark
 # --------------------------------------
 # 美化相关
 
+# font
+global_font_family: "'LXGW WenKai Screen', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Lato, Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif"
 # 白天模式
 lightmode_style:
 # 黑夜模式
 darkmode_style:
+
+# --------------------------------------
+# 优化相关
+
+## css前缀
+css_prefix: true
 
 # --------------------------------------
 # js plugin and cdn
@@ -56,6 +64,9 @@ archive_css:
 archive_js:
 ## 404
 404_css:
+
+## font cdn
+global_font_family_cdn: https://cdn1.tianli0.top/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
 
 # Inject
 ## 插入代码到头部 </head> 之前 和 底部 </body> 之前
