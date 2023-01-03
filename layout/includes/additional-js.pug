@@ -1,0 +1,26 @@
+#srcipt
+  !=js(url_for(theme.main_js))
+
+  if is_home() && theme.home_js
+    !=js(url_for(theme.home_js))
+  if is_page() && theme.page_js
+    !=js(url_for(theme.page_js))
+  if is_post() && theme.post_js
+    !=js(url_for(theme.post_js))
+  if is_tag() && theme.tag_js
+    !=js(url_for(theme.tag_js))
+  if is_category() && theme.category_js
+    !=js(url_for(theme.category_js))
+  if is_archive() && theme.archive_js
+    !=js(url_for(theme.archive_js))
+
+  // TODO: search js
+  //- search
+    if theme.algolia_search.enable
+      script(src=url_for(theme.asset.algolia_search_v4))
+      script(src=url_for(theme.asset.instantsearch_v4))
+      script(src=url_for(theme.asset.algolia_js))
+    else if theme.local_search.enable
+      script(src=url_for(theme.asset.local_search))
+
+  != fragment_cache('injectBottom', function(){return injectHtml(theme.inject.bottom)})

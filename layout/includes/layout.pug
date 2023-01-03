@@ -11,7 +11,7 @@ html(lang=config.language data-theme=theme.default_display_mode)
       #body-wrap(class=pageType)
         header#header
         main#content-inner.layout
-          // TODO:
+          // TODO: 一些临时说明
             一般而言<aside>应该在block中被定义（避免无内容的空标签）
             然而考虑到一些样式表的占位情况
             故之后视情况讨论
@@ -30,5 +30,4 @@ html(lang=config.language data-theme=theme.default_display_mode)
     #rightside
     // TODO: include './rightside.pug'
     // TODO: !=partial('includes/third-party/search/index', {}, {cache: true})
-    #script
-    // TODO: include ./additional-js.pug
+    include ./additional-js.pug

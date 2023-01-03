@@ -31,6 +31,32 @@ darkmode_style:
 # --------------------------------------
 # js plugin and cdn
 
+# cdn
+## 主题cdn
+## 通用
+main_css: css/main.css
+main_js: js/main.js
+## home
+home_css:
+home_js:
+## page
+page_css:
+page_js:
+## post
+post_css:
+post_js:
+## tag
+tag_css:
+tag_js:
+## category
+category_css:
+category_js:
+## archive
+archive_css:
+archive_js:
+## 404
+404_css:
+
 # Inject
 ## 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:

@@ -23,10 +23,24 @@ meta(name="format-detection" content="telephone=no")
 !=favicon_tag(theme.favicon || config.favicon)
 
 // TODO: css Only necessary css files are selected. It is recommended to write files separately and use 'include' to import
+!=css(url_for(theme.main_css))
+
+if is_home() && theme.home_css
+  !=css(url_for(theme.home_css))
+if is_page() && theme.page_css
+  !=css(url_for(theme.page_css))
+if is_post() && theme.post_css
+  !=css(url_for(theme.post_css))
+if is_tag() && theme.tag_css
+  !=css(url_for(theme.tag_css))
+if is_category() && theme.category_css
+  !=css(url_for(theme.category_css))
+if is_archive() && theme.archive_css
+  !=css(url_for(theme.archive_css))
 
 !=partial('includes/head/config_cache', {}, {cache: true})
 include ./config_site.pug
 // TODO: include ./head/noscript.pug
 
 !=fragment_cache('injectHead', function(){return injectHtml(theme.inject.head)})
-// TODO: (??)!=fragment_cache('injectHeadJs', function(){return inject_head_js()})
+// TODO: (??)!=fragment_cache('injectHeadcss', function(){return inject_head_css()})
