@@ -18,7 +18,7 @@ hexo.extend.helper.register('__series_toc', function (page) {
               <a class="doc-toc-tree-h1" href=${this.url_for(it.path)}>
                 <span class="toc-text">${it.subtitle?it.subtitle:it.title}</span>
               </a>
-              ${this.toc(page.content)}
+              ${this.toc(page.content, {list_number: false, min_depth: 2})}
             </div>
           `
         )
