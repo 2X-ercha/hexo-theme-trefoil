@@ -34,6 +34,9 @@ darkmode_style:
 ## 启用 highlight.js 官方主题需设置 hexo 配置文件中 highlight.hljs: true
 ## 并自行在 inject.head 中引入主题 css
 
+# 代码高度限制，超出的部分会隐藏，并显示展开按钮
+code_height_limit: false  # unit: px
+
 # --------------------------------------
 # 优化相关
 

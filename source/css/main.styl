@@ -36,6 +36,11 @@ body
     margin: 48px 0 72px 0
     padding: 48px
     background-color: hsl(0deg, 0%, 100%)
+    // TODO: HARD ENCODED VALUE!!!
+    figure.highlight > :is(table, pre):not(.code-expand-btn.expand-done + *)
+      max-height: 500px
+      overflow: hidden
+      display: block
   aside
     width: calc((100% - 768px)/2)
     margin: 48px 20px 72px 20px

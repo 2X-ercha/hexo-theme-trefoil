@@ -22,8 +22,23 @@ class CodeUtils {
       })
     })
   }
+
+  static initExpand() {
+    document.querySelectorAll('.code-expand-btn').forEach(box => {
+      box.addEventListener('click', (ev) => {
+        const element = ev.target;
+        if (element.classList.contains('expand-done')) {
+          element.classList.remove('expand-done')
+        } else {
+          element.classList.add('expand-done')
+        }
+      })
+    })
+  }
+
   static init() {
     this.initCopy()
+    this.initExpand()
   }
 }
 
