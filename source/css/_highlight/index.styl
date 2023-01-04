@@ -1,0 +1,107 @@
+@font-face
+  font-family: 'SourceCodePro'
+  font-style: normal
+  font-weight: 400
+  font-display: swap
+  src: url('/css/font/SourceCodePro-Regular.ttf.woff2') format('woff2')
+
+.highlight
+  position: relative
+  overflow: auto
+  color: #383a42
+  line-height: 1.5
+  background: #fffafa
+  margin: 20px
+  padding: 0 20px 0px 20px
+  border-radius: 20px
+  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1)
+  box-shadow: 0 5px 32px #ddd
+
+  &:hover
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1)
+    box-shadow: 0 3px 32px #aaa
+
+  figcaption
+    padding-top: 4px
+    opacity: .75
+    font-weight: 700
+
+  .code
+    vertical-align: top
+    &:before
+      position: absolute
+      top: 0
+      right: 10px
+      padding: 4px 0.5rem
+      opacity: .25
+      font-weight: 700
+
+  td.gutter pre
+    border-right: 1px solid #b9b4b3
+    padding-right: 0.5rem
+
+  // 代码块外观
+  pre
+    font-family: 'SourceCodePro'
+    font-size: .8125rem
+  td.gutter
+    padding-right: 1rem
+
+  .comment
+  .quote
+    color: #a0a1a7
+    font-style: italic
+
+  .doctag
+  .formula
+  .keyword
+    color: #a626a4
+
+  .deletion
+  .name
+  .section
+  .selector-tag
+  .subst
+    color: #e45649
+
+  .literal
+    color: #0184bb
+
+  .addition
+  .attribute
+  .meta .string
+  .regexp
+  .string
+    color: #50a14f
+
+  .attr
+  .number
+  .selector-attr
+  .selector-class
+  .selector-pseudo
+  .template-variable
+  .type
+  .variable
+    color: #986801
+
+  .bullet
+  .link
+  .meta
+  .selector-id
+  .symbol
+  .title
+    color: #4078f2
+
+  .built_in
+  .class .title
+  .title.class_
+    color: #c18401
+
+  .emphasis
+    font-style: italic
+
+  .strong
+    font-weight: 700
+
+  .link
+    text-decoration: underline

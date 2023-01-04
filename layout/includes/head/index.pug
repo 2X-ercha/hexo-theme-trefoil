@@ -25,10 +25,6 @@ meta(name="format-detection" content="telephone=no")
 // TODO: css Only necessary css files are selected. It is recommended to write files separately and use 'include' to import
 !=css(url_for(theme.main_css))
 
-// highlight.js
-// TODO: 主题切换
-!=css(url_for(theme.highlight_css))
-
 if is_home() && theme.home_css
   !=css(url_for(theme.home_css))
 if is_page() && theme.page_css

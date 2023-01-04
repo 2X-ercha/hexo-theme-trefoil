@@ -30,45 +30,47 @@ lightmode_style:
 # 黑夜模式
 darkmode_style:
 
+# highlight
+## 启用 highlight.js 官方主题需设置 hexo 配置文件中 highlight.hljs: true
+## 并自行在 inject.head 中引入主题 css
+
 # --------------------------------------
 # 优化相关
 
-## css前缀
+# css前缀
 css_prefix: true
 
 # --------------------------------------
 # js plugin and cdn
 
 # cdn
-## 主题cdn
-## 通用
-main_css: css/main.css
-main_js: js/main.js
-## highlight
-highlight_js: js/plugins/highlight/highlight.min.js
-highlight_css: css/plugins/highlight/github.min.css
-## home
+# 主题cdn
+# 通用
+main_css: /css/main.css
+main_js: /js/main.js
+
+# home
 home_css:
 home_js:
-## page
+# page
 page_css:
 page_js:
-## post
+# post
 post_css:
 post_js:
-## tag
+# tag
 tag_css:
 tag_js:
-## category
+# category
 category_css:
 category_js:
-## archive
+# archive
 archive_css:
 archive_js:
-## 404
+# 404
 404_css:
 
-## font cdn
+# font cdn
 global_font_family_cdn: https://cdn1.tianli0.top/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
 
 # Inject
