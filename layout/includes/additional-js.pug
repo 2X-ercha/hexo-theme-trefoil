@@ -1,6 +1,11 @@
 #srcipt
   !=js(url_for(theme.main_js))
 
+  // highlight.js
+  !=js(url_for(theme.highlight_js))
+  script.
+    hljs.highlightAll()
+
   if is_home() && theme.home_js
     !=js(url_for(theme.home_js))
   if is_page() && theme.page_js

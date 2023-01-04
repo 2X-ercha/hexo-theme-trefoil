@@ -44,6 +44,9 @@ css_prefix: true
 ## 通用
 main_css: css/main.css
 main_js: js/main.js
+## highlight
+highlight_js: js/plugins/highlight/highlight.min.js
+highlight_css: css/plugins/highlight/github.min.css
 ## home
 home_css:
 home_js:
