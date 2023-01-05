@@ -1,5 +1,22 @@
 class CodeUtils {
   static initCopy() {
+    const options = {
+      duration: 1000,
+      gravity: "bottom"
+    }
+
+    function onSuccess(deprecatedApi = false) {
+      Toastify({ ...options, text: "复制成功" }).showToast();
+      if (deprecatedApi) {
+        // TODO: 不要每次复制都弹（？
+        Toastify({ ...options, text: "TODO: message" }).showToast()
+      }
+    }
+
+    function onFailed() {
+      Toastify({ ...options, text: "复制失败" }).showToast();
+    }
+
     document.querySelectorAll('figure.highlight').forEach(box => {
       box.addEventListener('click', (ev) => {
         if (ev.target !== box.querySelector('figcaption > i')) {
@@ -10,14 +27,25 @@ class CodeUtils {
         const clipboard = navigator.clipboard
 
         if (clipboard) {
-          clipboard.writeText(code).catch(err => console.log(err))
+          clipboard.writeText(code).then(() => {
+            onSuccess()
+          }).catch(err => {
+            console.error(err)
+            onFailed()
+          })
         } else {
-          const tmp = document.createElement('textarea');
-          document.body.appendChild(tmp);
-          tmp.value = code;
-          tmp.select();
-          document.execCommand('copy');
-          document.body.removeChild(tmp)
+          try {
+            const tmp = document.createElement('textarea');
+            document.body.appendChild(tmp);
+            tmp.value = code;
+            tmp.select();
+            document.execCommand('copy');
+            document.body.removeChild(tmp)
+            onSuccess(true)
+          } catch (err) {
+            console.error(err)
+            onFailed()
+          }
         }
       })
     })
