@@ -55,7 +55,7 @@ class CodeUtils {
     document.querySelectorAll('.code-expand-btn i').forEach(box => {
       box.addEventListener('click', (ev) => {
         const code_expand_btn_icon = ev.target
-        const code_expand_btn = ev.target.parentNode;
+        const code_expand_btn = code_expand_btn_icon.parentNode;
         if (code_expand_btn.classList.contains('expand-done')) {
           code_expand_btn.classList.remove('expand-done')
           code_expand_btn_icon.classList.remove('ri-arrow-up-s-fill')
@@ -74,7 +74,8 @@ class CodeUtils {
       const code_expand_btn = box.querySelector('.code-expand-btn')
       const figure_table = box.querySelector('table')
       figure_table.style.setProperty('--code-height', figure_table.scrollHeight + 'px')
-      if ((figure_table.scrollHeight === figure_table.clientHeight) && figure_table.scrollHeight <= GLOBAL_CONFIG.code.height_limit) {
+      if ((figure_table.scrollHeight === figure_table.clientHeight) &&
+          (figure_table.scrollHeight <= GLOBAL_CONFIG.code.height_limit)) {
         code_expand_btn.style.display = 'none'
       }
     })
