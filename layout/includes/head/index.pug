@@ -39,9 +39,11 @@ if is_archive() && theme.archive_css
   !=css(url_for(theme.archive_css))
 
 //- font
-!=css(url_for(theme.global_font_family_cdn))
+!=css(url_for(theme.global_font_family_css))
 //- remix icon
 !=css(url_for(theme.remix_font_css))
+//- toastify
+!=css(url_for(theme.toastify_css))
 
 !=partial('includes/head/config_cache', {}, {cache: true})
 include ./config_site.pug

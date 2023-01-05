@@ -75,10 +75,19 @@ archive_js:
 # 404
 404_css:
 
-# font cdn
-global_font_family_cdn: https://cdn1.tianli0.top/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
-# icon
+# font lxgw-wenkai-screen-webfont
+## link: https://lxgw.github.io/2021/01/28/Klee-Simpchin/
+## repo: https://github.com/chawyehsu/lxgw-wenkai-webfont
+global_font_family_css: https://cdn1.tianli0.top/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
+# remix_icon
+## link: https://remixicon.com/
+## repo: https://github.com/Remix-Design/RemixIcon
 remix_font_css: /css/font/remixicon.css
+# notification js
+## link: https://apvarun.github.io/toastify-js/#
+## repo: https://github.com/apvarun/toastify-js
+toastify_css: https://cdn1.tianli0.top/npm/toastify-js/src/toastify.min.css
+toastify_js: https://cdn1.tianli0.top/npm/toastify-js/src/toastify.min.js
 
 # Inject
 ## 插入代码到头部 </head> 之前 和 底部 </body> 之前
