@@ -5,10 +5,14 @@
   font-display: swap
   src: url('/css/font/SourceCodePro-Regular.ttf.woff2') format('woff2')
 
-figure.highlight > :is(table, pre):not(.code-expand-btn.expand-done + *)
-  max-height: var(--code-height-limit)
+figure.highlight > :is(table, pre)
+  max-height: var(--code-height)
+  transition: all .5s ease-in-out
   overflow: hidden
   display: block
+
+figure.highlight > :is(table, pre):not(.code-expand-btn.expand-done + *)
+  max-height: var(--code-height-limit)
 
 .highlight
   position: relative
@@ -82,8 +86,8 @@ figure.highlight > :is(table, pre):not(.code-expand-btn.expand-done + *)
     margin: 8px 0
     font-family: 'SourceCodePro'
     font-size: .8125rem
-  td.gutter
-    padding-right: 1rem
+  td.code
+    padding-left: 1rem
 
   .comment
   .quote
