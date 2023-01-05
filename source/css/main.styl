@@ -2,17 +2,17 @@ if hexo-config('css_prefix')
   @import 'nib'
 // 配置变量从 ./var.styl 获取
 @import 'var'
-// 代码高亮语法主题色
-@import '_highlight/*'
-
-
 
 // TODO: ./css/_global/main.styl 所有css共用
 :root
   --global-font-family : $font-family
+  --code-height-limit : $code-height-limit
 body
   font-family: var(--global-font-family)
 // TODO: ./css/_glabal/article.styl 所有包含article（post and page）
+
+// 代码高亮及其代码相关
+@import '_highlight/*'
 
 // _layout 全局通用
 // for test
@@ -37,10 +37,6 @@ body
     padding: 48px
     background-color: hsl(0deg, 0%, 100%)
     // TODO: HARD ENCODED VALUE!!!
-    figure.highlight > :is(table, pre):not(.code-expand-btn.expand-done + *)
-      max-height: 500px
-      overflow: hidden
-      display: block
   aside
     width: calc((100% - 768px)/2)
     margin: 48px 20px 72px 20px

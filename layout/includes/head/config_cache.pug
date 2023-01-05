@@ -5,6 +5,13 @@
   // TODO: local search config
   let copyright = 'undefined'
   // TODO: copyright config
+  let code = 'undefined'
+  if ((config.highlight && config.highlight.enable) || (config.prismjs && config.prismjs.enable)) {
+    code = JSON.stringify({
+      height_limit_enable: theme.code.height_limit_enable,
+      height_limit: theme.code.height_limit + 30
+    })
+  }
   // ...
 
 script.
@@ -12,6 +19,7 @@ script.
     root: '!{config.root}',
     algolia: !{algolia},
     localSearch: !{localSearch},
+    code: !{code},
     copy: {
       success: '!{_p("copy.success")}',
       error: '!{_p("copy.error")}',
