@@ -40,6 +40,8 @@ if is_archive() && theme.archive_css
 
 //- font
 !=css(url_for(theme.global_font_family_cdn))
+//- remix icon
+!=css(url_for(theme.remix_font_css))
 
 !=partial('includes/head/config_cache', {}, {cache: true})
 include ./config_site.pug
