@@ -6,7 +6,30 @@ class CodeUtils {
     }
 
     function onSuccess(deprecatedApi = false) {
-      Toastify({ ...options, text: "复制成功" }).showToast();
+
+      Toastify({
+        ...options,
+        text: "复制成功",
+        className: 'toastify-success'
+      }).showToast();
+      // TODO: notification test
+      /*
+      Toastify({
+        ...options,
+        text: "复制失败",
+        className: 'toastify-error'
+      }).showToast();
+      Toastify({
+        ...options,
+        text: "提示信息",
+        className: 'toastify-info'
+      }).showToast();
+      Toastify({
+        ...options,
+        text: "警告信息",
+        className: 'toastify-warn'
+      }).showToast();
+      */
       if (deprecatedApi) {
         // TODO: 不要每次复制都弹（？
         Toastify({ ...options, text: "TODO: message" }).showToast()
@@ -14,7 +37,11 @@ class CodeUtils {
     }
 
     function onFailed() {
-      Toastify({ ...options, text: "复制失败" }).showToast();
+      Toastify({
+        ...options,
+        text: "复制失败",
+        className: 'toastify-error'
+      }).showToast();
     }
 
     document.querySelectorAll('figure.highlight').forEach(box => {
