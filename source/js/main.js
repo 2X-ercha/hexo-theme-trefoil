@@ -3,7 +3,6 @@
     static init() {
       function toastify(level, message, options) {
         Toastify({
-          duration: 1000,
           gravity: "bottom",
           ...options,
           text: message,
@@ -37,19 +36,15 @@
   class CodeUtils {
     static initCopy() {
       function onSuccess(deprecatedApi = false) {
-        // trefoil.notification.error('复制失败')
-        // trefoil.notification.info('提示信息')
-        // trefoil.notification.warn('警告信息')
         if (deprecatedApi) {
-          // TODO: 不要每次复制都弹（？
-          trefoil.notification.info('TODO: 宁的浏览器太拉力！我们不知道到底有没有成功')
+          trefoil.notification.warn('由于浏览器版本/网页http问题，无法确定是否复制成功', {duration: 1000})
         } else {
-          trefoil.notification.success('复制成功')
+          trefoil.notification.success('复制成功', {duration: 1000})
         }
       }
 
       function onFailed() {
-        trefoil.notification.error('复制失败')
+        trefoil.notification.error('复制失败', {duration: 1000})
       }
 
       document.querySelectorAll('figure.highlight').forEach(box => {
