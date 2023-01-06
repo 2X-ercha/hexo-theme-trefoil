@@ -1,47 +1,54 @@
-class CodeUtils {
-  static initCopy() {
-    const options = {
-      duration: 1000,
-      gravity: "bottom"
+class Trefoil {
+  static init() {
+    function toastify(level, message, options) {
+      Toastify({
+        duration: 1000,
+        gravity: "bottom",
+        ...options,
+        text: message,
+        className: `toastify-${level}`
+      }).showToast()
     }
 
-    function onSuccess(deprecatedApi = false) {
+    Object.defineProperty(window, 'trefoil', {
+      value: {
+        // TODO: notification test
+        notification: {
+          info(message, options = {}) {
+            toastify('info', message, options)
+          },
+          success(message, options = {}) {
+            toastify('success', message, options)
+          },
+          error(message, options = {}) {
+            toastify('error', message, options)
+          },
+          warn(message, options = {}) {
+            toastify('warn', message, options)
+          },
+        }
+      },
+      configurable: false
+    })
+  }
+}
 
-      Toastify({
-        ...options,
-        text: "复制成功",
-        className: 'toastify-success'
-      }).showToast();
-      // TODO: notification test
-      /*
-      Toastify({
-        ...options,
-        text: "复制失败",
-        className: 'toastify-error'
-      }).showToast();
-      Toastify({
-        ...options,
-        text: "提示信息",
-        className: 'toastify-info'
-      }).showToast();
-      Toastify({
-        ...options,
-        text: "警告信息",
-        className: 'toastify-warn'
-      }).showToast();
-      */
+class CodeUtils {
+  static initCopy() {
+    function onSuccess(deprecatedApi = false) {
+      // trefoil.notification.error('复制失败')
+      // trefoil.notification.info('提示信息')
+      // trefoil.notification.warn('警告信息')
       if (deprecatedApi) {
         // TODO: 不要每次复制都弹（？
-        Toastify({ ...options, text: "TODO: message" }).showToast()
+        trefoil.notification.info('TODO: 宁的浏览器太拉力！我们不知道到底有没有成功')
+      } else {
+        trefoil.notification.success('复制成功')
       }
     }
 
     function onFailed() {
-      Toastify({
-        ...options,
-        text: "复制失败",
-        className: 'toastify-error'
-      }).showToast();
+      trefoil.notification.error('复制失败')
     }
 
     document.querySelectorAll('figure.highlight').forEach(box => {
@@ -115,4 +122,5 @@ class CodeUtils {
   }
 }
 
+Trefoil.init()
 CodeUtils.init()
