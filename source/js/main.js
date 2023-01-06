@@ -37,7 +37,7 @@
     static initCopy() {
       function onSuccess(deprecatedApi = false) {
         if (deprecatedApi) {
-          trefoil.notification.warn('由于浏览器版本/网页http问题，无法确定是否复制成功', {duration: 1000})
+          trefoil.notification.warn('由于浏览器版本/网页http问题，无法确定是否复制成功', {duration: 3000})
         } else {
           trefoil.notification.success('复制成功', {duration: 1000})
         }
