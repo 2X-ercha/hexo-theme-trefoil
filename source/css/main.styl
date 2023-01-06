@@ -19,6 +19,16 @@ body
 .box-test
   border-radius: 2px
   box-shadow: 0 8px 32px hsl(0deg 0% 0% / 32%)
+.click-limit
+  animation: throttle 1s step-end forwards
+  &:active
+    animation: none
+
+@keyframes throttle
+  0%
+    pointer-events: none
+  100%
+    pointer-events: all
 
 // TODO: ./css/_layout/sidebar.styl 手机侧边导航栏
 
