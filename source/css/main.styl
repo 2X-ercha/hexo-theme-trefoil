@@ -11,6 +11,13 @@ body
   font-family: var(--global-font-family)
 // TODO: ./css/_glabal/article.styl 所有包含article（post and page）
 
+@font-face
+  font-family: 'SourceCodePro'
+  font-style: normal
+  font-weight: 400
+  font-display: swap
+  src: url('/css/font/SourceCodePro-Regular.ttf.woff2') format('woff2')
+
 // 代码高亮及其代码相关
 @import '_highlight/*'
 // plugins
@@ -21,6 +28,13 @@ body
 .box-test
   border-radius: 2px
   box-shadow: 0 8px 32px hsl(0deg 0% 0% / 32%)
+.typesetting
+  background-size: 100% 24px
+  background-image: linear-gradient(transparent 23px, hsl(0deg, 0%, 93%) 1px), linear-gradient(to left, transparent 12px, hsl(0deg, 0%, 93%), transparent 13px), linear-gradient(to right, transparent 12px, hsla(0deg, 100%, 50%, 0.4), transparent 13px)
+@media screen and (min-width: 640px)
+  .typesetting
+    background-image: linear-gradient(transparent 23px, hsl(0deg, 0%, 93%) 1px), linear-gradient(to left, transparent 48px, hsl(0deg, 0%, 93%), transparent 49px), linear-gradient(to right, transparent 48px, hsla(0deg, 100%, 50%, 0.4), transparent 49px)
+
 .click-limit
   animation: throttle 1s step-end forwards
   &:active
@@ -43,18 +57,132 @@ body
   align-items: center
   #mainbody
     max-width: 768px
-    width: 80%
-    // height: 100%
-    margin: 48px 0 72px 0
-    padding: 48px
-    background-color: hsl(0deg, 0%, 100%)
+    width: 100%
+    margin-block-start: 48px
+    margin-block-end: 72px
+    margin-inline: 0
+    padding-block: 48px
+    #post
+      padding-inline: 12px
+    @media screen and (min-width: 640px)
+      #post
+        padding-inline: 48px
   aside
     width: calc((100% - 768px)/2)
-    margin: 48px 20px 72px 20px
+    margin-block-start: 48px
+    margin-block-end: 72px
+    margin-inline: 20px
   #leftbody
     right: 0
   #rightbody
     left: 0
 // TODO: ./css/_layout/footer.styl 页脚布局
+
+// TODO: ./css/_layout/atticle.styl 文章排版
+article
+  word-wrap: break-word
+  hyphens: auto
+  letter-spacing: 0.02em
+  h1, h2, h3, h4, h5, h6
+    margin-block-start: 24px
+    margin-block-end: 12px
+    padding-inline: 4px
+  h1
+    margin-block-start: 0
+    font-size: 32px
+    line-height: 48px
+  h2
+    font-size: 24px
+    line-height: 48px
+  h3
+    font-size: 20px
+    line-height: 48px
+  h4
+    font-size: 18px
+    line-height: 24px
+  h5
+    font-size: 16px
+    line-height: 24px
+  h6
+    font-size: 14px
+    line-height: 24px
+  p
+    margin-block: 24px
+    padding-inline: 4px 
+    line-height: 1.5
+    a
+      color: #2094f3
+      padding-inline: 4px
+      transition: all .4s ease-out
+      &:hover
+        display: inline-block;
+        border-radius: 4px
+        background: #2094f320
+  ul, ol, dl
+    margin-block-start: 12px
+    margin-block-end: 24px
+    padding-inline: 4px
+    line-height: 1.5
+  ul, ol
+    padding-inline-start: 32px
+  ul ul, ul ol, ol ul, ol ol
+    margin-block: 0
+  ul
+    list-style-type: disc
+  ol
+    list-style-type: decimal
+  ul ul, ol ul
+    list-style-type: circle
+  ul ul ul, ul ol ul, ol ul ul, ol ol ul
+    list-style-type: square
+  li
+    list-style-type: unset
+  hr
+    margin-block-start: 34px
+    margin-block-end: 36px
+    padding-inline: 4px
+    border-color: #ddd
+  code
+    font-family: var(--global-font-family)
+    font-style: italic
+    font-size: 13px
+    color: #f53900;
+    background: hsla(0deg, 0%, 0%, 0.054)
+    word-wrap: break-word
+    word-break: break-word
+    overflow-wrap: break-word
+    border-radius: 4px
+    padding-inline: 4px
+    margin-inline: 4px
+    display: inline-block
+  pre
+    padding-inline: 4px
+    code
+      line-height: 1.5
+      padding-block: 12px
+      padding-inline: 20px
+      border-radius: 10px
+  figure
+    color: #383a42
+    line-height: 1.5
+    background: #fffdfd
+    margin-block: 20px
+    margin-inline: 4px
+    padding-inline: 20px
+    border-radius: 20px
+  blockquote
+    margin-block: 36px
+    margin-inline: 4px
+    padding-block: 12px
+    padding-inline: 16px
+    background-color: hsla(0deg, 0%, 0%, 0.054)
+    border-radius: 8px;
+    border-left: 8px solid #aaa
+    p
+      margin-block-start: 0
+      &:last-of-type
+        margin-block-end: 0
+    blockquote
+      margin-block: 12px
 
 // _component ui组件库，与 trefoil/layout/component/*.pug 一一对应

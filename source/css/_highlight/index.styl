@@ -1,10 +1,3 @@
-@font-face
-  font-family: 'SourceCodePro'
-  font-style: normal
-  font-weight: 400
-  font-display: swap
-  src: url('/css/font/SourceCodePro-Regular.ttf.woff2') format('woff2')
-
 figure.highlight > :is(table, pre)
   max-height: var(--code-height)
   transition: all .5s ease-in-out
@@ -17,12 +10,6 @@ figure.highlight > :is(table, pre):not(.code-expand-btn.expand-done + *)
 .highlight
   position: relative
   overflow: auto
-  color: #383a42
-  line-height: 1.5
-  background: #fffafa
-  margin: 20px
-  padding: 0 20px
-  border-radius: 20px
   transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1)
   box-shadow: 0 5px 32px #ddd
 
@@ -58,7 +45,7 @@ figure.highlight > :is(table, pre):not(.code-expand-btn.expand-done + *)
     pointer-events: none
     i
       pointer-events: all
-      max-width: 40px
+      max-width: 50%
       margin: auto
       display: block
       animation: code-expand-key 1.2s infinite
@@ -80,8 +67,8 @@ figure.highlight > :is(table, pre):not(.code-expand-btn.expand-done + *)
       font-weight: 700
 
   td.gutter pre
-    border-right: 1px solid #b9b4b3
-    padding-right: 0.5rem
+      border-right: 1px solid #b9b4b3
+      padding-right: 0.5rem
 
   // 代码块外观
   pre
