@@ -14,8 +14,12 @@
   if is_archive() && theme.archive_js
     !=js(url_for(theme.archive_js))
 
-  //- toastify
+  //- notification
   !=js(url_for(theme.toastify_js))
+  //- lightbox
+  !=js(url_for(theme.viewimage_js))
+  script.
+    window.ViewImage && ViewImage.init('#mainbody img')
 
   // TODO: search js
   //- search

@@ -25,6 +25,7 @@ default_display_mode: light # light or dark
 
 # font
 global_font_family: "'LXGW WenKai Screen', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Lato, Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif"
+
 # 白天模式
 lightmode_style:
 # 黑夜模式
@@ -83,11 +84,16 @@ global_font_family_css: https://cdn1.tianli0.top/npm/lxgw-wenkai-screen-webfont@
 ## link: https://remixicon.com/
 ## repo: https://github.com/Remix-Design/RemixIcon
 remix_font_css: /css/font/remixicon.css
-# notification js
+# notification: toastify.js
 ## link: https://apvarun.github.io/toastify-js/#
 ## repo: https://github.com/apvarun/toastify-js
 toastify_css: https://cdn1.tianli0.top/npm/toastify-js/src/toastify.min.css
 toastify_js: https://cdn1.tianli0.top/npm/toastify-js/src/toastify.min.js
+# Lightbox: ViewImage.js
+## link: https://tokinx.github.io/ViewImage/
+## repo: https://github.com/Tokinx/ViewImage
+viewimage_js: /js/plugins/view-image.min.js
+
 
 # Inject
 ## 插入代码到头部 </head> 之前 和 底部 </body> 之前
