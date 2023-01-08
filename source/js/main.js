@@ -100,14 +100,16 @@
     }
 
     static initExpandHidden() {
-      document.querySelectorAll('figure.highlight').forEach(box => {
-        const code_expand_btn = box.querySelector('.code-expand-btn')
-        const figure_table = box.querySelector('table')
-        figure_table.style.setProperty('--code-height', figure_table.scrollHeight + 'px')
-        if ((figure_table.scrollHeight === figure_table.clientHeight) &&
-          (figure_table.scrollHeight <= GLOBAL_CONFIG.code.height_limit)) {
-          code_expand_btn.style.display = 'none'
-        }
+      window.addEventListener('load', () => {
+        document.querySelectorAll('figure.highlight').forEach(box => {
+          const code_expand_btn = box.querySelector('.code-expand-btn')
+          const figure_table = box.querySelector('table')
+          figure_table.style.setProperty('--code-height', figure_table.scrollHeight + 'px')
+          if ((figure_table.scrollHeight === figure_table.clientHeight) &&
+            (figure_table.scrollHeight <= GLOBAL_CONFIG.code.height_limit)) {
+            code_expand_btn.style.display = 'none'
+          }
+        })
       })
     }
 
@@ -129,7 +131,24 @@
       this.initLangsMark()
     }
   }
+  class ImageUtils {
+    static initPaster() {
+      window.addEventListener('load', () => {
+        document.querySelectorAll('article p span:has(img)').forEach(box => {
+          const image = box.querySelector('img')
+          if (image.clientHeight > 240 && image.clientWidth > 240) {
+              box.classList.add('bigimg')
+          }
+        })
+      })
+    }
+
+    static init() {
+      this.initPaster()
+    }
+  }
 
   Trefoil.init()
   CodeUtils.init()
+  ImageUtils.init()
 })()

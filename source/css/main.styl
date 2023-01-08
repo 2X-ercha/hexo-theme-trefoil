@@ -118,6 +118,31 @@ article
         display: inline-block;
         border-radius: 4px
         background: #2094f320
+    span:has(img)
+      display: inline-flex
+    span.bigimg:has(img)
+      display: block
+      position: relative
+      &:before
+        position: absolute
+        content: ''
+        z-index: 1
+        height: 20px
+        width: 100px
+        background: #000
+        opacity: 0.15
+        top: 22px
+        left: -25px
+        transform: rotate(-0.12turn)
+        clip-path: polygon(0 0,100% 0,95% 25%,100% 50%,95% 75%,100% 100%,0 100%,4% 75%,0 50%,5% 25%)
+  img
+    max-width: 100%
+    margin-block: 12px
+    border-radius: 20px
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1)
+    box-shadow: 0 5px 32px #ddd
+    &:hover
+      box-shadow: 0 3px 32px #aaa
   ul, ol, dl
     margin-block-start: 12px
     margin-block-end: 24px
