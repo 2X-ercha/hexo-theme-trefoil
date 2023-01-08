@@ -119,7 +119,7 @@
         langs.add(box.classList[1])
       })
       for (let lang of langs) {
-        document.styleSheets[0].insertRule(`.highlight.${lang.replaceAll('++', '\\+\\+')} .code::before
+        document.styleSheets[0].insertRule(`.highlight.${lang.replaceAll('++', '\\+\\+')} td.code::before
                                               {content: "${lang.toUpperCase()}";}` )
       }
     }
