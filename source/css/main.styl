@@ -144,6 +144,17 @@ article
     box-shadow: 0 5px 32px #ddd
     &:hover
       box-shadow: 0 3px 32px #aaa
+  @media screen and (min-width: 640px)
+    del
+      background: #000
+      text-decoration: none
+      display: inline-block
+      border-radius: 4px
+      padding-inline: 4px
+      margin-inline: 4px
+      transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1)
+      &:hover
+        color: #fff
   ul, ol, dl
     margin-block-start: 12px
     margin-block-end: 24px
@@ -210,5 +221,10 @@ article
         margin-block-end: 0
     blockquote
       margin-block: 12px
+  li:has(input)
+    &::marker
+      content: none
+  ul:has(li>input)
+    padding-inline-start: 10px
 
 // _component ui组件库，与 trefoil/layout/component/*.pug 一一对应
