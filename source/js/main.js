@@ -142,7 +142,7 @@
           })
         }, 100)
       })
-      objserver.observe(document.querySelector('#post'))
+      objserver.observe(document.querySelector('#page'))
     }
   }
 

@@ -6,7 +6,7 @@ hexo.extend.filter.register('after_post_render', function (data) {
   let $ = cheerio.load(data.content)
   $('figure.highlight').each((...[, element]) => {
     const index = maps.aliases[$(element).attr('class')?.split(/\s+/)[1]]
-    const name = index ? maps.names[index] : ''
+    const name = maps.names[index]
     $(element).append(`<span class="language">${name}</span>`)
   })
   data.content = $.html();

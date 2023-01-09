@@ -5,7 +5,7 @@ const { trim } = require('./utils');
 hexo.extend.helper.register('__series_toc', function (page) {
   const series_dist = hexo.locals.get('series_dist')
   const toc_str = []
-  if (typeof(page.series_name) === 'string' && page.series_name.length !== 0 && !isNaN(page.series_index)) {
+  if (typeof(page.series_name) === 'string' && !isNaN(page.series_index)) {
     // index === 0: series home toc
     // index !== 0: series page toc, include self toc
     const series = series_dist[page.series_name]
@@ -37,4 +37,12 @@ hexo.extend.helper.register('__series_toc', function (page) {
     toc_str.push('</div>')
   }
   return toc_str.join('')
+})
+
+hexo.extend.helper.register('__series_get_home_url', function(page) {
+	const series_dist = hexo.locals.get('series_dist')
+	if (typeof(page.series_name) === 'string' && !isNaN(page.series_index)) {
+		return series_dist[page.series_name].home.path
+	}
+	return null
 })

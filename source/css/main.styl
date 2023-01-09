@@ -62,10 +62,10 @@ body
     margin-block-end: 72px
     margin-inline: 0
     padding-block: 48px
-    #post
+    #page
       padding-inline: 12px
     @media screen and (min-width: 640px)
-      #post
+      #page
         padding-inline: 48px
   aside
     width: calc((100% - 768px)/2)
@@ -88,7 +88,6 @@ article
     margin-block-end: 12px
     padding-inline: 4px
   h1
-    margin-block-start: 0
     font-size: 32px
     line-height: 48px
   h2
@@ -237,5 +236,25 @@ article
     border-collapse: collapse
     thead, tbody tr
       height: 24px
+
+// /_loyout/page.styl 文章页
+#page-head
+  margin-inline: 4px
+  line-height: 24px
+  font-size: 13px
+  h1
+    margin-block-start: 24px
+    margin-block-end: 48px
+    font-size: 32px
+    line-height: 48px
+  a
+    display: inline-block
+    color: #2094f3
+    text-decoration: none
+    transition: all .4s ease-out
+    &:hover
+      color: #ff5724
+  #page-meta
+    color: #bbb
 
 // _component ui组件库，与 trefoil/layout/component/*.pug 一一对应

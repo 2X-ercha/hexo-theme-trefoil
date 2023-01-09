@@ -1,10 +1,25 @@
 extends includes/layout.pug
 
 block content
-  #post.typesetting
-    // !=__series_toc(page)
-    // 
-      TODO: 渲染测试
-      bug: _config中 permalink 不能使用目前有的 abbrlink 插件（根据title生成的abbrlink会重复）
-      临时使用 :title.html
+  #page.typesetting
+    #page-head
+      #page-folder
+        a(href=url_for('/'))= _p("home")
+        span=' / '
+        if (page.categories.data.length != 0 && typeof(page.series_name) !== 'string')
+          each item, index in page.categories.data
+            a(href=url_for(item.path)) #[=item.name]
+            if (index < page.categories.data.length - 1)
+              span=' | '
+        else if (typeof(page.series_name) === 'string')
+          a(href=url_for(__series_get_home_url(page))) #[=_p("series")+page.series_name]
+        else
+          a(href=url_for(page.path))= _p('singlepage')
+      if (page.updated <= page.date)
+        #page-meta= _p("created")
+          time.lately(datetime=date_xml(page.date) title=_p('page.date') + ' ' + full_date(page.date))=date(page.date, config.date_format)
+      else
+        #page-meta= _p("updated")
+          time.lately(datetime=date_xml(page.updated) title=_p('page.updated') + ' ' + full_date(page.updated))=date(page.updated, config.date_format)
+      h1#page-title=pageTitle
     article#article-container.post-content!=page.content

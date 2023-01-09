@@ -1,3 +1,11 @@
+home: 首页
+
+created: '发布于 '
+updated: '更新于 '
+
+series: '合集：'
+singlepage: '单页文章'
+
 page:
   articles: 文章总览
   tag: 标签
@@ -9,11 +17,14 @@ footer:
   theme: 主题
 
 date_suffix:
-  just: 刚刚
-  min: 分钟前
-  hour: 小时前
-  day: 天前
-  month: 个月前
+  second: ' 秒'
+  minute: ' 分钟'
+  hour: ' 小时'
+  day: ' 天'
+  month: ' 个月'
+  year: ' 年'
+  ago: '前'
+  error: ' 错误'
 
 copy:
   success: 复制成功
