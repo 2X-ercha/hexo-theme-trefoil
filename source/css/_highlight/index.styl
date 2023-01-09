@@ -55,18 +55,19 @@ figure.highlight > :is(table, pre):not(.code-expand-btn.expand-done + *)
 
   .code
     vertical-align: top
-    &:before
-      position: absolute
-      font-size: 13px
-      top: 4px
-      right: 12px
-      padding: 4px 0.5rem
-      opacity: .25
-      font-weight: 700
 
   td.gutter pre
       border-right: 1px solid #b9b4b3
       padding-right: 0.5rem
+
+  .language
+    position: absolute
+    font-size: 13px
+    top: 4px
+    right: 12px
+    padding: 4px 0.5rem
+    opacity: .25
+    font-weight: 700
 
   // 代码块外观
   pre

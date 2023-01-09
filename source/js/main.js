@@ -113,22 +113,10 @@
       })
     }
 
-    static initLangsMark() {
-      const langs = new Set()
-      document.querySelectorAll('figure.highlight').forEach(box => {
-        langs.add(box.classList[1])
-      })
-      for (let lang of langs) {
-        document.styleSheets[0].insertRule(`.highlight.${lang.replaceAll('++', '\\+\\+')} td.code::before
-                                              {content: "${lang.toUpperCase()}";}` )
-      }
-    }
-
     static init() {
       this.initCopy()
       this.initExpand()
       this.initExpandHidden()
-      this.initLangsMark()
     }
   }
 
