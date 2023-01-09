@@ -207,6 +207,11 @@ article
     margin-inline: 4px
     padding-inline: 20px
     border-radius: 20px
+    table
+      margin-block: 0
+      margin-inline: 0
+      border-top: 0
+      border-bottom: 0
   blockquote
     margin-block: 36px
     margin-inline: 4px
@@ -226,5 +231,13 @@ article
       content: none
   ul:has(li>input)
     padding-inline-start: 10px
+  table
+    margin-block: 24px
+    margin-inline: 4px
+    padding-block: 8.6px
+    width: -webkit-fill-available
+    text-align: left
+    border-top: 2px solid
+    border-bottom: 2px solid
 
 // _component ui组件库，与 trefoil/layout/component/*.pug 一一对应
