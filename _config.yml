@@ -85,6 +85,10 @@ global_font_family_css: https://cdn1.tianli0.top/npm/lxgw-wenkai-screen-webfont@
 ## repo: https://github.com/Remix-Design/RemixIcon
 remix_font_css: /css/font/remixicon.css
 # notification: toastify.js
+# lately time: Lately.js
+## link: https://tokinx.github.io/lately/index-zh.html
+## repo: https://github.com/Tokinx/Lately
+lately_js: /js/plugins/lately.min.js
 ## link: https://apvarun.github.io/toastify-js/#
 ## repo: https://github.com/apvarun/toastify-js
 toastify_css: https://cdn1.tianli0.top/npm/toastify-js/src/toastify.min.css

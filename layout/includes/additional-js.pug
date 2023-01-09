@@ -20,6 +20,20 @@
   !=js(url_for(theme.viewimage_js))
   script.
     window.ViewImage && ViewImage.init('#mainbody img')
+  //- lately time
+  !=js(url_for(theme.lately_js))
+  script.
+    window.Lately && Lately.init({ target: 'time, .lately', lang: {
+        'second': '!{_p("date_suffix.second")}',
+        'minute': '!{_p("date_suffix.minute")}',
+        'hour': '!{_p("date_suffix.hour")}',
+        'day': '!{_p("date_suffix.day")}',
+        'month': '!{_p("date_suffix.month")}',
+        'year': '!{_p("date_suffix.year")}',
+        'ago': '!{_p("date_suffix.ago")}',
+        'error': '!{_p("date_suffix.error")}'
+      }
+    })
 
   // TODO: search js
   //- search
