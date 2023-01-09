@@ -131,24 +131,34 @@
       this.initLangsMark()
     }
   }
-  class ImageUtils {
-    static initPaster() {
-      window.addEventListener('load', () => {
-        document.querySelectorAll('article p span:has(img)').forEach(box => {
-          const image = box.querySelector('img')
-          if (image.clientHeight > 240 && image.clientWidth > 240) {
-              box.classList.add('bigimg')
-          }
-        })
+
+  class LayoutGlobalChange {
+    static BigImageMatch() {
+      document.querySelectorAll('article p span:has(img)').forEach(box => {
+        const image = box.querySelector('img')
+        if (image.clientHeight > 240 && image.clientWidth > 240) {
+            box.classList.add('bigimg')
+        } else {
+          box.classList.remove('bigimg')
+        }
       })
     }
 
     static init() {
-      this.initPaster()
+      let timer = 0
+      const objserver = new ResizeObserver((entries) => {
+        timer && clearTimeout(timer)
+        timer = setTimeout(() => {
+          entries.forEach(() => {
+            this.BigImageMatch()
+          })
+        }, 100)
+      })
+      objserver.observe(document.querySelector('#post'))
     }
   }
 
   Trefoil.init()
   CodeUtils.init()
-  ImageUtils.init()
+  LayoutGlobalChange.init()
 })()
