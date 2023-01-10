@@ -1,9 +1,9 @@
 extends includes/layout.pug
 
 block content
-  #page.typesetting
-    #page-head
-      #page-folder
+  #post.typesetting
+    #post-head
+      #post-folder
         a(href=url_for('/'))= _p("home")
         span=' / '
         if (page.categories.data.length != 0 && typeof(page.series_name) !== 'string')
@@ -14,12 +14,22 @@ block content
         else if (typeof(page.series_name) === 'string')
           a(href=url_for(__series_get_home_url(page))) #[=_p("series")+page.series_name]
         else
-          a(href=url_for(page.path))= _p('singlepage')
+          a(href=url_for(page.path))= _p('singlepost')
       if (page.updated <= page.date)
-        #page-meta= _p("created")
+        #post-meta= _p("created")
           time.lately(datetime=date_xml(page.date) title=_p('page.date') + ' ' + full_date(page.date))=date(page.date, config.date_format)
       else
-        #page-meta= _p("updated")
+        #post-meta= _p("updated")
           time.lately(datetime=date_xml(page.updated) title=_p('page.updated') + ' ' + full_date(page.updated))=date(page.updated, config.date_format)
-      h1#page-title=pageTitle
+      h1#post-title=pageTitle
     article#article-container.post-content!=page.content
+    #post-context
+      if (typeof(page.series_name) === 'string')
+        - let prevpage = __series_get_page_prev(page)
+        - let nextpage = __series_get_page_next(page)
+        if (prevpage)
+          #post-prev
+            a(href=url_for(prevpage.path))= prevpage.subtitle
+        if (nextpage)
+          #post-next
+            a(href=url_for(nextpage.path))= nextpage.subtitle

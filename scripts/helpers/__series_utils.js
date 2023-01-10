@@ -46,3 +46,37 @@ hexo.extend.helper.register('__series_get_home_url', function(page) {
 	}
 	return null
 })
+
+hexo.extend.helper.register('__series_get_page_prev', function(page) {
+  const series_dist = hexo.locals.get('series_dist')
+  if (typeof(page.series_name) === 'string' && !isNaN(page.series_index) && page.series_index !== 0) {
+		const series_pages = series_dist[page.series_name].pages
+    for (const index in series_pages) {
+      if (series_pages[index].series_index === page.series_index) {
+        if(index !== 0) {
+          return series_pages[index-1]
+        } else {
+          return null
+        }
+      }
+    }
+	}
+	return null
+})
+
+hexo.extend.helper.register('__series_get_page_next', function(page) {
+  const series_dist = hexo.locals.get('series_dist')
+  if (typeof(page.series_name) === 'string' && !isNaN(page.series_index) && page.series_index !== 0) {
+		const series_pages = series_dist[page.series_name].pages
+    for (const index in series_pages) {
+      if (series_pages[index].series_index === page.series_index) {
+        if(index !== (series_pages.length-1)) {
+          return series_pages[Number(index)+1]
+        } else {
+          return null
+        }
+      }
+    }
+	}
+	return null
+})

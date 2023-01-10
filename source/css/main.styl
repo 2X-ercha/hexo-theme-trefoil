@@ -62,10 +62,10 @@ body
     margin-block-end: 72px
     margin-inline: 0
     padding-block: 48px
-    #page
+    #post
       padding-inline: 12px
     @media screen and (min-width: 640px)
-      #page
+      #post
         padding-inline: 48px
   aside
     width: calc((100% - 768px)/2)
@@ -86,7 +86,6 @@ article
   h1, h2, h3, h4, h5, h6
     margin-block-start: 24px
     margin-block-end: 12px
-    padding-inline: 4px
   h1
     font-size: 32px
     line-height: 48px
@@ -107,7 +106,6 @@ article
     line-height: 24px
   p
     margin-block: 24px
-    padding-inline: 4px 
     line-height: 1.5
     a
       display: inline-block
@@ -157,7 +155,6 @@ article
   ul, ol, dl
     margin-block-start: 12px
     margin-block-end: 24px
-    padding-inline: 4px
     line-height: 1.5
   ul, ol
     padding-inline-start: 32px
@@ -176,7 +173,6 @@ article
   hr
     margin-block-start: 34px
     margin-block-end: 36px
-    padding-inline: 4px
     border-color: #ddd
   code
     font-family: var(--global-font-family)
@@ -191,9 +187,7 @@ article
     padding-inline: 4px
     margin-inline: 4px
     display: inline-block
-  pre
-    padding-inline: 4px
-    code
+  pre code
       line-height: 1.5
       padding-block: 12px
       padding-inline: 20px
@@ -237,8 +231,8 @@ article
     thead, tbody tr
       height: 24px
 
-// /_loyout/page.styl 文章页
-#page-head
+// /_loyout/post.styl 文章页
+#post-head
   margin-inline: 4px
   line-height: 24px
   font-size: 13px
@@ -254,7 +248,9 @@ article
     transition: all .4s ease-out
     &:hover
       color: #ff5724
-  #page-meta
+  #post-meta
     color: #bbb
+#article-container
+  margin-inline: 4px
 
 // _component ui组件库，与 trefoil/layout/component/*.pug 一一对应
