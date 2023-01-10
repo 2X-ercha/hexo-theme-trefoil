@@ -11,7 +11,7 @@ hexo.extend.helper.register('__series_toc', function (page) {
     const series = series_dist[page.series_name]
     toc_str.push('<div class="doc-toc-tree">')
     for (const it of Object.values(series.pages)) {
-      if (page.series_index == it.series_index) {
+      if (page.series_index === it.series_index) {
         toc_str.push(
           trim`
             <div class="doc-toc-tree-block active">
@@ -52,12 +52,10 @@ hexo.extend.helper.register('__series_get_page_prev', function(page) {
   if (typeof(page.series_name) === 'string' && !isNaN(page.series_index) && page.series_index !== 0) {
 		const series_pages = series_dist[page.series_name].pages
     for (const index in series_pages) {
-      if (series_pages[index].series_index === page.series_index) {
-        if(index !== 0) {
-          return series_pages[index-1]
-        } else {
-          return null
-        }
+      const series_pages = series_dist[page.series_name].pages
+      for (const [ index, it ] of series_pages.entries()) {
+        if (it.series_index !== page.series_index) continue
+        return series_pages[index - 1] || null
       }
     }
 	}
@@ -68,14 +66,9 @@ hexo.extend.helper.register('__series_get_page_next', function(page) {
   const series_dist = hexo.locals.get('series_dist')
   if (typeof(page.series_name) === 'string' && !isNaN(page.series_index) && page.series_index !== 0) {
 		const series_pages = series_dist[page.series_name].pages
-    for (const index in series_pages) {
-      if (series_pages[index].series_index === page.series_index) {
-        if(index !== (series_pages.length-1)) {
-          return series_pages[Number(index)+1]
-        } else {
-          return null
-        }
-      }
+    for (const [ index, it ] of series_pages.entries()) {
+      if (it.series_index !== page.series_index) continue
+      return series_pages[index + 1] || null
     }
 	}
 	return null
