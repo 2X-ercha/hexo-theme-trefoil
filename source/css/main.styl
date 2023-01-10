@@ -64,6 +64,7 @@ body
     padding-block: 48px
     #post
       padding-inline: 12px
+      padding-block: 48px
     @media screen and (min-width: 640px)
       #post
         padding-inline: 48px
@@ -252,5 +253,51 @@ article
     color: #bbb
 #article-container
   margin-inline: 4px
+#post-copyright
+  color: #bbb
+  font-size: 14px
+  text-align: center
+  margin-block: 48px
+  i:before
+    vertical-align: bottom
+    font-size: 20px
+  a
+    color: #bbb
+    transition: all .2s ease-out
+    &:hover
+      color: #ff5724
+#post-context
+  display: flex
+  justify-content: space-between
+  border-top: 1px dashed #aaa
+  #post-prev
+    width: 50%
+    text-align: left
+    margin-inline-end: 8px
+    padding-block: 16px
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+  #post-next
+    width: 50%
+    text-align: right
+    margin-inline-start: 8px
+    padding-block: 16px
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+  span
+    font-size: 13px
+    color: #bbb
+    padding-block-end: 6.5px
+  a
+    color: #000
+    font-size: 24px
+    height: 100%
+    width: 75%
+    text-decoration: none
+    transition: all .2s ease-out
+    &:hover
+      color: #ff5724
 
 // _component ui组件库，与 trefoil/layout/component/*.pug 一一对应

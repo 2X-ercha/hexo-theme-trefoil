@@ -2,7 +2,7 @@
 
 hexo.on('ready', () => {
   const { version } = require('../../package.json')
-  hexo.log.info(`
+  console.log("\x1B[32m", `
   ████████╗██████╗ ███████╗███████╗ ██████╗ ██╗██╗
   ╚══██╔══╝██╔══██╗██╔════╝██╔════╝██╔═══██╗██║██║
      ██║   ██████╔╝█████╗  █████╗  ██║   ██║██║██║
@@ -10,7 +10,8 @@ hexo.on('ready', () => {
      ██║   ██║  ██║███████╗██║     ╚██████╔╝██║███████╗
      ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝      ╚═════╝ ╚═╝╚══════╝
                   Welcome to trefoil!
-                    version: ${version}`)
+                    version: ${version}
+  `)
 })
 
 hexo.on('generateBefore', () => {

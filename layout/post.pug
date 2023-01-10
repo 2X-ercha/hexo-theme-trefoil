@@ -23,13 +23,26 @@ block content
           time.lately(datetime=date_xml(page.updated) title=_p('page.updated') + ' ' + full_date(page.updated))=date(page.updated, config.date_format)
       h1#post-title=pageTitle
     article#article-container.post-content!=page.content
-    #post-context
-      if (typeof(page.series_name) === 'string')
-        - let prevpage = __series_get_page_prev(page)
-        - let nextpage = __series_get_page_next(page)
+  #post-copyright
+    span= _p("copyright.left_content")
+    i.ri-creative-commons-fill= ' '
+    a(href=url_for("https://creativecommons.org/licenses/by-nc-sa/4.0/"), style="font-weight: bold")= "CC BY-NC-SA 4.0"
+    span= _p("copyright.right_content")
+  #post-context
+    if (typeof(page.series_name) === 'string' && page.series_index !== 0)
+      - let prevpage = __series_get_page_prev(page)
+      - let nextpage = __series_get_page_next(page)
+      #post-prev
         if (prevpage)
-          #post-prev
-            a(href=url_for(prevpage.path))= prevpage.subtitle
+          span= _p("page.context_prev")
+          a(href=url_for(prevpage.path))= prevpage.subtitle
+        else
+          span= _p("page.return_series_home")
+          a(href=url_for(__series_get_home_url(page)))= page.title
+      #post-next
         if (nextpage)
-          #post-next
-            a(href=url_for(nextpage.path))= nextpage.subtitle
+          span= _p("page.context_next")
+          a(href=url_for(nextpage.path))= nextpage.subtitle
+        else
+          span= _p("page.return_series_home")
+          a(href=url_for(__series_get_home_url(page)))= page.title

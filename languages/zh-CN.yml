@@ -11,6 +11,13 @@ page:
   tag: 标签
   category: 分类
   archives: 归档
+  context_prev: '回顾上一篇'
+  context_next: '接下来阅读'
+  return_series_home: '返回合集首页'
+
+copyright:
+  left_content: "本文采用 "
+  right_content: " 协议，转载请标注文章来源。"
 
 footer:
   framework: 框架
