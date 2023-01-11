@@ -12,6 +12,12 @@
       height_limit: theme.code.height_limit + 30
     })
   }
+  let lazyload = "undefined"
+  if (theme.lazyload && theme.lazyload.enable) {
+    lazyload = JSON.stringify({
+      onerror: theme.lazyload.onError
+    })
+  }
   // ...
 
 script.
@@ -25,5 +31,6 @@ script.
       error: '!{_p("copy.error")}',
       noSupport: '!{_p("copy.noSupport")}'
     },
-    copyright: !{copyright}
+    copyright: !{copyright},
+    lazyload: !{lazyload}
   }

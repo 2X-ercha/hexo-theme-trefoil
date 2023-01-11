@@ -160,8 +160,34 @@
     }
   }
 
+  class ImageLazyLoad {
+    static init() {
+      function onError() {
+        this.removeEventListener('error', onError)
+        this.srcset = GLOBAL_CONFIG.lazyload.onerror
+      }
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const image = entry.target;
+            image.srcset = image.getAttribute('data-srcset');
+            image.addEventListener('error', onError)
+            image.classList.add('loaded')
+            observer.unobserve(image)
+          }
+        });
+      });
+
+      document.querySelectorAll('img.lazy-load').forEach((it) => {
+        observer.observe(it)
+      })
+    }
+  }
+
   Welcome.init()
   Trefoil.init()
   CodeUtils.init()
   LayoutGlobalChange.init()
+  ImageLazyLoad.init()
 })()

@@ -40,6 +40,13 @@ code:
   height_limit_enable: true
   height_limit: 120  # unit: px 实际会在此基础上增加30px
 
+lazyload:
+  enable: true
+  onlypost: false # optional
+  # TODO: onLoading and onError image
+  onLoading: /img/loading.gif
+  onError: /img/favicon.png
+
 # --------------------------------------
 # 优化相关
 
