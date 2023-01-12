@@ -7,6 +7,22 @@ if hexo-config('css_prefix')
 :root
   --global-font-family : $font-family
   --code-height-limit : $code-height-limit
+  --article-box-shadow: $article-box-shadow
+  --link: $blue
+  --link-hover: $orange-red
+  --link-hover-bg: $link-hover-bg
+  --img-paster-bg: $black
+  --del-bg: $black
+  --del-hover: $white
+  --line: $light-grey
+  --code: $orange-red
+  --figure-bg: $figure-bg
+  --note-border-left: $dark-grey
+  --note-bg: $light-grey
+  --post-meta: $light-grey
+  --post-copyright: $light-grey
+  --post-context-info: $light-grey
+  --post-context-title: $black
 body
   font-family: var(--global-font-family)
 // TODO: ./css/_glabal/article.styl 所有包含article（post and page）
@@ -27,7 +43,7 @@ body
 // for test
 .box-test
   border-radius: 2px
-  box-shadow: 0 2px 7px #00000017
+  box-shadow: var(--article-box-shadow)
 .typesetting
   background-size: 100% 24px
   background-image: linear-gradient(transparent 23px, hsl(0deg, 0%, 93%) 1px), linear-gradient(to left, transparent 12px, hsl(0deg, 0%, 93%), transparent 13px), linear-gradient(to right, transparent 12px, hsla(0deg, 100%, 50%, 0.4), transparent 13px)
@@ -110,12 +126,12 @@ article
     line-height: 1.5
     a
       display: inline-block
-      color: #2094f3
+      color: var(--link)
       padding-inline: 4px
-      transition: all .4s ease-out
+      transition: all .3s ease-out
       &:hover
         border-radius: 4px
-        background: #2094f320
+        background: var(--link-hover-bg)
   p
     span:has(img)
       display: inline-flex
@@ -128,7 +144,7 @@ article
         z-index: 1
         height: 20px
         width: 100px
-        background: #000
+        background: var(--img-paster-bg)
         opacity: 0.15
         top: 22px
         left: -25px
@@ -138,19 +154,19 @@ article
     max-width: 100%
     margin-block: 12px
     border-radius: 20px
-    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1)
-    box-shadow: 0 2px 7px #00000017
+    transition: .3s cubic-bezier(0.4, 0, 0.2, 1)
+    box-shadow: var(--article-box-shadow)
   @media screen and (min-width: 640px)
     del
-      background: #000
+      background: var(--del-bg)
       text-decoration: none
       display: inline-block
       border-radius: 4px
       padding-inline: 4px
       margin-inline: 4px
-      transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1)
+      transition: .3s cubic-bezier(0.4, 0, 0.2, 1)
       &:hover
-        color: #fff
+        color: var(--del-hover)
   ul, ol, dl
     margin-block-start: 12px
     margin-block-end: 24px
@@ -172,13 +188,16 @@ article
   hr
     margin-block-start: 34px
     margin-block-end: 36px
-    border-color: #ddd
+    border-style: double
+    border-color: var(--line)
+    background: var(--line)
+    border-radius: 1px
   code
     font-family: var(--global-font-family)
     font-style: italic
     font-size: 13px
-    color: #f53900;
-    background: hsla(0deg, 0%, 0%, 0.054)
+    color: var(--code)
+    background: $block-bg
     word-wrap: break-word
     word-break: break-word
     overflow-wrap: break-word
@@ -192,9 +211,8 @@ article
       padding-inline: 20px
       border-radius: 10px
   figure
-    color: #383a42
     line-height: 1.5
-    background: #fffdfd
+    background: var(--figure-bg)
     margin-block: 20px
     margin-inline: 4px
     padding-inline: 20px
@@ -204,9 +222,9 @@ article
     margin-inline: 4px
     padding-block: 12px
     padding-inline: 16px
-    background-color: hsla(0deg, 0%, 0%, 0.054)
+    background: $block-bg
     border-radius: 8px;
-    border-left: 8px solid #aaa
+    border-left: 8px solid var(--note-border-left)
     p
       margin-block-start: 0
       &:last-of-type
@@ -242,17 +260,17 @@ article
     line-height: 48px
   a
     display: inline-block
-    color: #2094f3
+    color: var(--link)
     text-decoration: none
-    transition: all .4s ease-out
+    transition: all .3s ease-out
     &:hover
-      color: #ff5724
+      color: var(--link-hover)
   #post-meta
-    color: #bbb
+    color: var(--post-meta)
 #article-container
   margin-inline: 4px
 #post-copyright
-  color: #bbb
+  color: var(--post-copyright)
   font-size: 14px
   text-align: center
   margin-block: 48px
@@ -260,14 +278,14 @@ article
     vertical-align: bottom
     font-size: 20px
   a
-    color: #bbb
+    color: var(--post-copyright)
     transition: all .2s ease-out
     &:hover
-      color: #ff5724
+      color: var(--link-hover)
 #post-context
   display: flex
   justify-content: space-between
-  border-top: 1px dashed #aaa
+  border-top: 1px dashed var(--line)
   #post-prev
     width: 50%
     text-align: left
@@ -286,16 +304,16 @@ article
     align-items: flex-end
   span
     font-size: 13px
-    color: #bbb
+    color: var(--post-context-info)
     padding-block-end: 6.5px
   a
-    color: #000
+    color: var(--post-context-title)
     font-size: 24px
     height: 100%
     width: 75%
     text-decoration: none
     transition: all .2s ease-out
     &:hover
-      color: #ff5724
+      color: var(--link-hover)
 
 // _component ui组件库，与 trefoil/layout/component/*.pug 一一对应

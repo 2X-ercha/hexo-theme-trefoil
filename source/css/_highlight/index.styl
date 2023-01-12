@@ -10,14 +10,14 @@ figure.highlight > :is(table, pre):not(.code-expand-btn.expand-done + *)
 .highlight
   position: relative
   overflow: auto
-  box-shadow: 0 2px 7px #00000017
+  box-shadow: var(--article-box-shadow)
 
   figcaption
     padding: 8px 0
     font-size: 13px
     // opacity: .75
     font-weight: 700
-    border-bottom: 1px solid #b9b4b3
+    border-bottom: 1px solid var(--line)
 
     i
       vertical-align: bottom
@@ -54,7 +54,7 @@ figure.highlight > :is(table, pre):not(.code-expand-btn.expand-done + *)
     vertical-align: top
 
   td.gutter pre
-      border-right: 1px solid #b9b4b3
+      border-right: 1px solid var(--line)
       padding-right: 0.5rem
 
   .language
