@@ -16,4 +16,5 @@ hexo.on('ready', () => {
 
 hexo.on('generateBefore', () => {
   require('./lib/series-dist-gen')(hexo)
+  require('./lib/utils')(hexo)
 })

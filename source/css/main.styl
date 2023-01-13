@@ -316,4 +316,69 @@ article
     &:hover
       color: var(--link-hover)
 
+// _tags 外挂标签
+.tag-mark
+  &.u
+    text-decoration: none
+    border-bottom: 2px solid
+  &.wavy
+    text-decoration: underline wavy
+  &.emp
+    width: fit-content
+    text-decoration: none
+    border-bottom: 4px dotted
+  &.cover
+    border-radius: 2px
+    transition: all .3s ease-out
+    &:hover
+      color: white
+  &.del
+    text-decoration: line-through
+  &.sup
+    vertical-align: super
+    line-height: 1
+    font-size: smaller
+  &.sub
+    vertical-align: sub
+    line-height: 1
+    font-size: smaller
+  &.kbd
+    border-radius: 4px
+    border: 1px solid grey
+    border-bottom-width: 3px
+    padding-inline: 2px
+    font-size: 14px
+    vertical-align: text-top
+  &.red
+    color: red
+    &.cover
+      background: red
+  &.orange
+    color: orange
+    &.cover
+      background: orange
+  &.yellow
+    color: #cc0
+    &.cover
+      background: #cc0
+  &.green
+    color: green
+    &.cover
+      background: green
+  &.cyan
+    color: #0cc
+    &.cover
+      background: #0cc
+  &.blue
+    color: blue
+    &.cover
+      background: blue
+  &.purple
+    color: purple
+    &.cover
+      background: purple
+  &.grey
+    color: gray
+    &.cover
+      background: gray
 // _component ui组件库，与 trefoil/layout/component/*.pug 一一对应
