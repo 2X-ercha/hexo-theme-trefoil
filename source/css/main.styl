@@ -502,4 +502,37 @@ article
     border-left-color: #bbbbbb
     .icon i
       color: #bbbbbb
+.tag-copy
+  margin-block-start: 28px
+  margin-block-end: 28.55px
+  margin-inline: 4px
+  display: flex
+  justify-content: space-between
+  border-radius: 8px
+  overflow: hidden
+  background: #f1f2f3
+  max-width: 100%
+  .copy-area
+    text-indent: 1rem
+    font-family: 'SourceCodePro'
+    background: #f1f2f3
+    border: 1px solid #e3e5e8
+    border-radius: 8px 0 0 8px
+    width: 100%
+    transition: all .3s ease-out
+    &:focus-visible
+      outline: #e3e5e8 auto 1px
+  .copy-btn
+    padding-block: 0
+    padding-inline: 10px
+    line-height: 36px
+    display: inline-block
+    background: #e3e5e8
+    border: 1px solid #e3e5e8
+    border-radius: 0 8px 8px 0
+    transition: all .3s ease-out
+    i
+      pointer-events: none
+    &:hover
+      background: #fff
 // _component ui组件库，与 trefoil/layout/component/*.pug 一一对应

@@ -61,17 +61,11 @@
         trefoil.notification.error('复制失败', {duration: 1000})
       }
 
-      document.querySelectorAll('figure.highlight').forEach(box => {
-        box.addEventListener('click', (ev) => {
-          if (ev.target !== box.querySelector('figcaption > i')) {
-            return
-          }
-
-          const code = box.querySelector('.code').innerText
-          const clipboard = navigator.clipboard
+      function CopyText(content) {
+        const clipboard = navigator.clipboard
 
           if (clipboard) {
-            clipboard.writeText(code).then(() => {
+            clipboard.writeText(content).then(() => {
               onSuccess()
             }).catch(err => {
               console.error(err)
@@ -81,7 +75,7 @@
             try {
               const tmp = document.createElement('textarea');
               document.body.appendChild(tmp);
-              tmp.value = code;
+              tmp.value = content;
               tmp.select();
               document.execCommand('copy');
               document.body.removeChild(tmp)
@@ -91,6 +85,23 @@
               onFailed()
             }
           }
+      }
+
+      document.querySelectorAll('figure.highlight').forEach(box => {
+        box.addEventListener('click', (ev) => {
+          if (ev.target !== box.querySelector('figcaption > i')) {
+            return
+          }
+          CopyText(box.querySelector('.code').innerText)
+        })
+      })
+
+      document.querySelectorAll('.tag-copy').forEach(box => {
+        box.addEventListener('click', (ev) => {
+          if (ev.target !== box.querySelector('.tag-copy button.copy-btn')) {
+            return
+          }
+          CopyText(box.querySelector('input.copy-area').value)
         })
       })
     }
