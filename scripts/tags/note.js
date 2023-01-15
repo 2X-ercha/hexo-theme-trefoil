@@ -5,6 +5,6 @@ hexo.extend.tag.register('note', function(args, content) {
   const html = []
   html.push(`<div class="tag-note ${args.color}">`)
   if (args.icon) html.push(`<div class="icon"><i class="${args.icon}"></i></div>`)
-  html.push(`<div class="content"><p>${content.replaceAll('\n\n','</p><p>').replaceAll('  ','<br>')}</p></div></div>`)
+  html.push(`<div class="content">${hexo.render.renderSync({text:content, engine:'md'})}</div></div>`)
   return html.join('')
 }, {ends: true})
