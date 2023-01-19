@@ -64,6 +64,30 @@ body
 // TODO: ./css/_layout/sidebar.styl 手机侧边导航栏
 
 // TODO: ./css/_layout/header.styl 顶栏布局
+header#header
+  nav#nav
+    position: fixed
+    width: 100%
+    z-index 90
+    #nav-group
+      display: flex
+      max-width: 1200px
+      width: 100%
+      margin-inline: auto
+      #blog-info, #navFn
+        flex: 1
+      #navFn
+        text-align: right
+        #search, #switchMode
+          display: inline-block
+      #menus
+        .menus_items
+          .menus_item
+            display: inline-block
+            position: relative
+            .menus_item_child
+              position: absolute
+              display: none
 
 // TODO: ./css/_layout/mainbody.styl 全局主体（左右栏和中间）
 .layout

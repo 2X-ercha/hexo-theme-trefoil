@@ -1,0 +1,21 @@
+nav#nav
+  #nav-group
+    #blog-info
+      a(href=url_for('/') title=config.title)
+        if theme.nav.logo
+          img.site-icon(src=url_for(theme.nav.logo))
+        if theme.nav.display_title
+          span.site-name=config.title
+
+    #menus
+      !=partial('includes/header/menu_item', {}, {cache: true})
+
+    #navFn
+      #search
+        a.search-icon
+          i.ri-search-eye-line
+          span= '搜索'
+      #switchMode
+        a.switchmode-icon
+          i.ri-sun-line
+          span= '关灯'

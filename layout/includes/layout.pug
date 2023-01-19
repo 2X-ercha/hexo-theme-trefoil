@@ -9,7 +9,7 @@ html(lang=config.language data-theme=theme.default_display_mode)
     // TODO: !=partial('includes/sidebar', {}, {cache: true})
     if page.type !== '404'
       #body-wrap(class=pageType)
-        header#header
+        include ./header/index.pug
         main#content-inner.layout
           // TODO: 一些临时说明
             一般而言<aside>应该在block中被定义（避免无内容的空标签）

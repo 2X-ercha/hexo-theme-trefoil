@@ -3,6 +3,24 @@
 
 # menu
 menu:
+  首页: / || ri-home-7-fill
+  test1 || ri-article-fill:
+    childtest1: / || ri-file-code-fill
+    childtest2: / || ri-file-code-fill
+    childtest3: / || ri-file-code-fill
+  test2 || ri-article-fill:
+    childtest1: / || ri-file-code-fill
+    childtest2: / || ri-file-code-fill
+    childtest3: / || ri-file-code-fill
+  test3 || ri-article-fill:
+    childtest1: / || ri-file-code-fill
+    childtest2: / || ri-file-code-fill
+    childtest3: / || ri-file-code-fill
+
+# nav
+nav:
+  logo: # image
+  display_title: true
 
 # --------------------------------------
 # 网站相关
