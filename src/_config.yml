@@ -1,0 +1,16 @@
+abbrlink:
+  enable: true
+  length: 7  # 长度：默认 7，最小为 5，最大为 10
+
+# 网站图标
+favicon: /images/favicon.svg
+
+# 全局字体
+font_family: 
+  default: "'LXGW WenKai Screen', system-ui"
+  code: "'Monaspace Neon', monospaced"
+
+# Todo: 
+cdn:
+  css: /styles/index.css
+  # js: 

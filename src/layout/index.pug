@@ -1,0 +1,5 @@
+if is_home()
+    each post, index in page.posts.data
+        div
+            a(href=url_for(post.path))
+                span=post.title + (post.subtitle ? (': ' + post.subtitle) : '')

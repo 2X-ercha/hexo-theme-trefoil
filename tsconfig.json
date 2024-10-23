@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "lib": ["ESNext", "DOM"],
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "moduleResolution": "Bundler",
+        "paths": { "@/*": ["./src/*"] }
+    },
+    "include": ["src/**/*"],
+    "references": [{ "path": "tsconfig.node.json" }]
+}

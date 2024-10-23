@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "skipLibCheck": true,
+    "module": "ESNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "allowArbitraryExtensions": true,
+    "esModuleInterop": true
+  },
+  "include": ["rollup.config.ts"]
+}
